@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+
+{# MEDIUM STYLE EDITOR#}
+<link rel="stylesheet" href="{% static 'app/style.css' %}">
+<style>
+  .wrapper{
+    margin-top: 55vh;
+  }
+  #particles-js{
+    background-color: #1b212c;
+  }
+</style>
+<title>Home</title>
+</head>
+<body>
+  <header>
+    <span>Night Hunters</span>
+  </header>
+  <div id="particles-js">
+    <div class="headings0">
+      <span class="pageHeading0">
+        Check-Sec
+      </span>
+      <span class="pageSubHeading0 animate034">
+        tools
+      </span>
+    </div>
+  </div>
+  <main>
+    <article class="wrapper">
+      <article class="bger">
+        <section class="route-link-parent">
+          <a class="route-links0" href="{% url 'cjack'%}">Click-Jacking</a>
+          <a class="route-links0" href="{% url 'type'%}">Port Scanner</a>
+          <a class="route-links0" href="{% url 'bombing'%}">Email Bombing</a>
+        </section>
+    
+        <section class="par-scroll-down-arrow">
+            <div class="scroll-down-arrow toolTip">
+              <span class="toolTipText">How To Use</span>
+              <div class="shape0">
+              </div>
+            </div>
+        </section>
+
+        <section class="how-to-use">
+          <section class="card">
+            <span class="htu-head">
+              Click-Jacking
+            </span>
+            <span class="htu-text">CheckSec has made this very easy for you to check whether your website is vulnerable to Click-Jacking attack or not. User just need to put URL of website in given search box. If the website opens within page without redirection, it means that website is vulnerable. The secured website will not get open and will show some error to that.</span>
+          </section>
+          <section class="card">
+            <span class="htu-head">
+              Port Scanner
+            </span>
+            <span class="htu-text">CheckSec will allow you to check for open ports within some range. You can change the range also in code according to your requirment. User needs to put IP address for which he/she wants to check it and it would be helpful in securing the network. Keep calm while using he tool because it take time for scan for ports and providing you accurate information.</span>
+          </section>
+          <section class="card">
+            <span class="htu-head">
+              Email Bombing
+            </span>
+            <span class="htu-text">CheckSec provides you the GUI interface to check whether the targeted email-id is prone to mass mailing or not. You need to fill the required inputs demanded for proper functioning of this tool. If the targeted email is secured then the response will be Your Email is secure otherwise the attack  would be successful in mass mailing.<hr>Disclaimer: This tool is made to check security of email and to educate people of IT Industry. User will be responsible if he/she abuse this tool.</span>
+          </section>
+        </section>
+      </article>
+    </article>
+  </main>
+  <footer>
+    <div class="fain">
+      <a class="fainHead" href="">Night Hunters</a>
+    </div>
+    <div class="fain-components">
+      <a href="">Utkarsh Dhiman</a>
+      <a href="">Manpreet Singh Kullar</a>
+      <a href="">Ashwani Kumar</a>
+    </div>
+  </footer>
+<script src="{% static 'app/particles.js' %}"></script>
+<script src="{% static 'app/particle-control.js' %}"></script>
+<script>
+
+const animate034 = document.querySelector(".animate034");
+const manyWords = [
+  "terminal",
+  "shell",
+  "bash",
+  "intergration",
+];
+
+function run(i){
+  animate034.innerHTML = manyWords[i];
+}
+let i = 0;
+setInterval(() => {
+  run(i++);
+  if(i>=manyWords.length) i=0;
+}, 1000);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'app/style.css' %}">
+<style>
+  article.wrapper{
+      min-height: calc(100vh - 15rem);
+    }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span>Night Hunters</span>
+  </header>
+  <div id="particles-js"></div>
+  <article class="wrapper">
+    <h2>Opened Ports are:</h2>
+    <h3>{{target}}</h3>
+    {% for data in ports %}
+        <h3 style="color:tomato;"> {{data}}</h3>
+        {% endfor %}
+        {{data}}
+  </article>
+</main>
+<footer>
+  <div class="fain">
+    <a class="fainHead" href="">Night Hunters</a>
+  </div>
+  <div class="fain-components">
+    <a href="">Utkarsh Dhiman</a>
+    <a href="">Manpreet Singh Kullar</a>
+    <a href="">Ashwani Kumar</a>
+  </div>
+</footer>
+  <script src="{% static 'app/particles.js' %}"></script>
+  <script src="{% static 'app/particle-control.js' %}"></script>
+</body>
+</html>

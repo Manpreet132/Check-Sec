@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Bombing</title>
+  <link rel="stylesheet" href="{% static 'app/style.css' %}">
+
+</head>
+<body>
+  <main>
+    <header>
+      <span>Night Hunters</span>
+    </header>
+    <div id="particles-js"></div>
+    <article class="wrapper">
+      <h2>Email Bombing</h2>
+      <form action="{% url 'bomb'%}" class="card" method="post">
+        {% csrf_token %}
+        <label>
+          Target Email
+          <input required type="text" class="interact" name="targetEmail" placeholder="email">
+        </label>
+    
+        <div>
+          <label style="display: block; margin: 1rem;">
+            Enter the number of emails
+            <input type="text" placeholder="should be greater than 1" class="interact" name="bombMode">
+        </div>
+
+        <label class="toolTip">Email Server
+          <span class="toolTipText">Only three servers are implemented. Rest will be updated.</span>
+          <select name="emailServer">
+            <option value="1">Gmail</option>
+            <option value="2">Yahoo</option>
+            <option value="3">Outlook</option>
+          </select>
+        </label>
+    
+        <label>
+          From Email
+          <input required type="text" class="interact" placeholder="source email" name="fromEmail">
+        </label>
+    
+        <label>
+          Password
+          <input required class="interact" type="password" placeholder="password for authentication" name="password">
+        </label>
+    
+        <label>Subject
+          <input required name="subject" type="text" placeholder="subject of emails to be sent" class="interact">
+        </label>
+    
+        <label>Message
+          <input required name="message" type="text" placeholder="body of emails to be sent" class="interact">
+        </label>
+    
+        <button class="interact" type="submit">Submit</button>
+        <input required class="interact" type="reset">
+      </form>
+    </article>
+    <section class="how-to-use card">
+      <span class="htu-head">
+        Description
+      </span>
+      <span class="htu-text">Email Bombing or Mass mailing consists of sending numerous duplicate mails to the same email address. These types of mail bombs are simple to design but their extreme simplicity means they can be easily detected by spam filters. Email-bombing using mass mailing is also commonly performed as a DDoS attack by employing the use of botnets; hierarchical networks of computers compromised by malware and under the attacker's control. Similar to their use in spamming, the attacker instructs the botnet to send out millions or even billions of emails, but unlike normal botnet spamming, the emails are all addressed to only one or a few addresses the attacker wishes to flood. This form of email bombing is similar in purpose to other DDoS flooding attacks. As the targets are frequently the dedicated hosts handling website and email accounts of a business, this type of attack can be just as devastating to both services of the host.</span>
+  </section>
+  </main>
+  <footer>
+    <div class="fain">
+      <a class="fainHead" href="">Night Hunters</a>
+    </div>
+    <div class="fain-components">
+      <a href="">Utkarsh Dhiman</a>
+      <a href="">Manpreet Singh Kullar</a>
+      <a href="">Ashwani Kumar</a>
+    </div>
+  </footer>
+  <script src="{% static 'app/particles.js' %}"></script>
+  <script src="{% static 'app/particle-control.js' %}"></script>
+</body>
+</html>
